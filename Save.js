@@ -22,6 +22,6 @@ class Save {
     a.click()
   }
   toFormat() {
-    return `<div class="saves"><span style="font-size: 20px">${this.name}</span><br><span style="font-size: 15px; font-style: italic">${this.desc}</span><br><span style="font-size: 10px">由${this.author}上传</span><br><button class='btn' onclick='Saves[${this.id}].copy()'>粘贴至剪贴板</button> <button class='btn' onclick='Saves[${this.id}].save()'>以.txt形式保存</button></div>`
+    return `<div class="saves"><span style="font-size: 20px">${this.name}</span><br><span style="font-size: 15px; font-style: italic">${this.desc}</span><br><span style="font-size: 10px">由${this.author}上传</span><br><button class='btn' onclick='Saves[${this.id}].copy()'>粘贴至剪贴板</button> <button class='btn' onclick='Saves[${this.id}].save()'>以.txt形式保存</button></div><br>`
   }
 }
