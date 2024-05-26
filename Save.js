@@ -25,3 +25,18 @@ class Save {
     return `<div class="saves"><span style="font-size: 20px">${this.name}</span><br><span style="font-size: 15px; font-style: italic">${this.desc}</span><br><span style="font-size: 10px">由${this.author}上传</span><br><button class='btn' onclick='Saves[${this.id}].copy()'>粘贴至剪贴板</button> <button class='btn' onclick='Saves[${this.id}].save()'>以.txt形式保存</button></div><br><br>`
   }
 }
+class Category {
+  constructor(name,styles,saves) {
+    this.name = name
+    this.styles = styles || ""
+    this.styles += "font-size:24px"
+    this.saves = saves
+    for(let i = 0; i < saves.length; i++) this.saves[i].id = i
+  }
+  applyHTML() {
+    let tempHTML = ''
+    tempHTML += `<div class="saves" style="${this.styles}"><span>${this.name}</div><br><br>`
+    for(let i = 0; i < this.saves.length; i++) tempHTML += this.saves[i].toFormat()
+    document.getElementById('saves').innerHTML += tempHTML
+  }
+}
