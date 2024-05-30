@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDR存档银行</title>
     <link rel="stylesheet" href="style.css">
+    <script src="jszip.js" defer></script>
     <script src="Save.js" defer></script>
     <script src="pre-world.js" defer></script>
     <script src="world.js" defer></script>
@@ -17,7 +18,8 @@
     <script src="index.js" defer></script>
 </head>
   <body align="center">
-    <h1>数据增量重制版存档银行</h1>
+    <h1>数据增量重制版存档银行</h1><br>
+    <button class="btn" onclick="DownloadAllSaves()">下载所有存档</button><br><br>
     <div id="saves"></div>
   </body>
 </html>
