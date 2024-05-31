@@ -37,9 +37,9 @@ class Category {
   }
   applyHTML() {
     let tempHTML = ''
-    tempHTML += `<div class="saves" style="${this.styles}"><span>${this.name}</div><br><br>`
+    tempHTML += `<div class="saves" style="${this.styles}" onclick="displays[${this.id}] = displays[${this.id}]? false : true"><span>${this.name}<span id="categoryText${this.id}"></span></div><br><br><div id="category${this.id}">`
     for(let i = 0; i < this.saves.length; i++) tempHTML += this.saves[i].toFormat()
-    document.getElementById('saves').innerHTML += tempHTML
+    document.getElementById('saves').innerHTML += tempHTML + "</div>"
   }
   toFolderInZipFile() {
     let folder = fullsaves.folder(`(${this.id+1}) `+this.name)

@@ -27,3 +27,11 @@ function DownloadAllSaves() {
     a.click()
   });
 }
+var displays = Array(8).fill(false)
+function updateDisplay() {
+  for (let i = 0;i < displays.length;i++) {
+    document.getElementById(`category${i}`).style.display = displays[i]? 'block' : 'none'
+    document.getElementById(`categoryText${i}`).innerHTML = displays[i]? '▶' : '▼'
+  }
+}
+setInterval(updateDisplay)
